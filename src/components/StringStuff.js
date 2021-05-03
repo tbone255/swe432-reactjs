@@ -36,12 +36,17 @@ function StringStuff(props) {
 
 	function process() {
 		console.log(selected);
-		if (selected == 1) {
+		if (selected == 1) { // Return random
 			setResult(stringList[Math.floor(Math.random()*stringList.length)]);
 		}
-	  //else if (selected == 2) {
-			
-		//}
+	  	else if (selected == 2) { // Return random with replacement
+			setResult(stringList[Math.floor(Math.random()*stringList.length)]);
+		}
+		else if (selected == 3) { // Return random without replacement
+			var index = Math.floor(Math.random()*stringList.length);
+			setResult(stringList[index]);
+			delRow(index);
+		}
 	}
 
 
